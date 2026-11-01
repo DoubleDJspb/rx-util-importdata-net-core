@@ -19,7 +19,8 @@ namespace ImportData.IntegrationServicesClient.Models
     public IEmployees Addressee { get; set; }
 
     public bool IsManyAddressees { get; set; }
-    public IEnumerable<IOutgoingLetterAddresseess> Addressees { get; set; }
+    public string ManyAddresseesPlaceholder { get; set; }
+    public string ManyAddresseesLabel { get; set; }
 
     new public static IMemos CreateEntity(Dictionary<string, string> propertiesForSearch, Entity entity, List<Structures.ExceptionsStruct> exceptionList, bool isBatch, NLog.Logger logger)
     {
@@ -79,54 +80,6 @@ namespace ImportData.IntegrationServicesClient.Models
       }
       else
         return BusinessLogic.UpdateEntity((IMemos)entity, exceptionList, logger);
-    }
-
-
-    public void CreateAddressee(IMemosAddresseess addressee, Logger logger, bool isBatch = false)
-    {
-      try
-      {
-        if (!IsManyAddressees)
-          IsManyAddressees = true;
-
-        if (isBatch)
-        {
-          CreateAddresseeBatch(addressee, logger);
-          return;
-        }
-
-        var result = Client.Instance().For<IMemos>()
-         .Key(this)
-         .NavigateTo(nameof(Addressees))
-         .Set(new IMemosAddresseess()
-         {
-           Addressee = addressee.Addressee,
-           Department = addressee.Department,
-           Note = addressee.Note,
-           MemoDocumentBase = this,
-         })
-         .InsertEntryAsync().Result;
-      }
-      catch (Exception ex)
-      {
-        logger.Error(ex);
-        throw;
-      }
-    }
-
-    private void CreateAddresseeBatch(IMemosAddresseess addressee, Logger logger)
-    {
-      BatchClient.AddRequest(odata => odata.For<IMemos>()
-           .Key(this)
-           .NavigateTo(nameof(Addressees))
-           .Set(new IMemosAddresseess()
-           {
-             Addressee = addressee.Addressee,
-             Department = addressee.Department,
-             Note = addressee.Note,
-             MemoDocumentBase = this,
-           })
-           .InsertEntryAsync());
     }
   }
 }

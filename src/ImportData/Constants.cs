@@ -190,7 +190,6 @@ namespace ImportData
       public const string Contact = "Контактные лица";
       public const string CompanyDirectives = "Распоряжения";
       public const string Memos = "СлужебныеЗаписки";
-      public const string MemosAddressees = "СлужебныеЗапискиАдресаты";
       public const string Logins = "Логины";
       public const string Substitutions = "Замещения";
       public const string CaseFiles = "Номенклатура дел";
@@ -237,7 +236,6 @@ namespace ImportData
       public const string ImportContacts = "importcontacts";
       public const string ImportCompanyDirectives = "importcompanydirectives";
       public const string ImportMemos = "importmemos";
-      public const string ImportMemosAddressees = "importmemosaddressees";
       public const string ImportLogins = "importlogins";
       public const string ImportSubstitutions = "importsubstitutions";
       public const string ImportCaseFiles = "importcasefiles";
@@ -276,7 +274,6 @@ namespace ImportData
         {ImportContacts, ImportContacts},
         {ImportCompanyDirectives, ImportCompanyDirectives},
         {ImportMemos, ImportMemos},
-        {ImportMemosAddressees, ImportMemosAddressees},
         {ImportLogins, ImportLogins},
         {ImportCaseFiles, ImportCaseFiles},
         {ImportCountries, ImportCountries},
