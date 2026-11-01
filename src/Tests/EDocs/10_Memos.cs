@@ -39,7 +39,7 @@ namespace Tests.EDocs
         {
             var exceptionList = new List<Structures.ExceptionsStruct>();
 
-            var actualMemo = Common.GetOfficialDocument<IOrders>(parameters[shift + 0], parameters[shift + 1], parameters[shift + 12]);
+            var actualMemo = Common.GetOfficialDocument<IMemos>(parameters[shift + 0], parameters[shift + 1], parameters[shift + 13]);
 
             var name = Common.GetDocumentName(parameters[shift + 2], parameters[shift + 0], parameters[shift + 1], parameters[shift + 3]);
 
@@ -55,7 +55,7 @@ namespace Tests.EDocs
                 Common.CheckParam(actualMemo.BusinessUnit, parameters[shift + 4], "BusinessUnit"),
                 Common.CheckParam(actualMemo.Department, parameters[shift + 5], "Department"),
                 Common.CheckParam(actualMemo.LastVersion(), parameters[shift + 6], "LastVersion"),
-                Common.CheckParam(actualMemo.Assignee, parameters[shift + 7], "Addressee"),
+                Common.CheckParam(actualMemo.Addressee, parameters[shift + 7], "Addressee"),
                 Common.CheckParam(actualMemo.Assignee, parameters[shift + 8], "Assignee"),
                 Common.CheckParam(actualMemo.PreparedBy, parameters[shift + 9], "PreparedBy"),
                 Common.CheckParam(actualMemo.OurSignatory, parameters[shift + 10], "OurSignatory"),
