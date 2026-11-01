@@ -55,13 +55,14 @@ namespace Tests.EDocs
                 Common.CheckParam(actualMemo.BusinessUnit, parameters[shift + 4], "BusinessUnit"),
                 Common.CheckParam(actualMemo.Department, parameters[shift + 5], "Department"),
                 Common.CheckParam(actualMemo.LastVersion(), parameters[shift + 6], "LastVersion"),
-                Common.CheckParam(actualMemo.Assignee, parameters[shift + 7], "Assignee"),
-                Common.CheckParam(actualMemo.PreparedBy, parameters[shift + 8], "PreparedBy"),
-                Common.CheckParam(actualMemo.OurSignatory, parameters[shift + 9], "OurSignatory"),
-                Common.CheckParam(actualMemo.LifeCycleState, BusinessLogic.GetPropertyLifeCycleState(parameters[shift + 10]), "LifeCycleState"),
-                Common.CheckParam(actualMemo.Note, parameters[shift + 11], "Note"),
-                Common.CheckParam(actualMemo.DocumentRegister, parameters[shift + 12], "DocumentRegister"),
-                Common.CheckParam(actualMemo.RegistrationState, BusinessLogic.GetRegistrationsState(parameters[shift + 13]), "RegistrationState")
+                Common.CheckParam(actualMemo.Assignee, parameters[shift + 7], "Addressee"),
+                Common.CheckParam(actualMemo.Assignee, parameters[shift + 8], "Assignee"),
+                Common.CheckParam(actualMemo.PreparedBy, parameters[shift + 9], "PreparedBy"),
+                Common.CheckParam(actualMemo.OurSignatory, parameters[shift + 10], "OurSignatory"),
+                Common.CheckParam(actualMemo.LifeCycleState, BusinessLogic.GetPropertyLifeCycleState(parameters[shift + 11]), "LifeCycleState"),
+                Common.CheckParam(actualMemo.Note, parameters[shift + 12], "Note"),
+                Common.CheckParam(actualMemo.DocumentRegister, parameters[shift + 13], "DocumentRegister"),
+                Common.CheckParam(actualMemo.RegistrationState, BusinessLogic.GetRegistrationsState(parameters[shift + 14]), "RegistrationState")
             };
 
             errorList = errorList.Where(x => !string.IsNullOrEmpty(x)).ToList();
