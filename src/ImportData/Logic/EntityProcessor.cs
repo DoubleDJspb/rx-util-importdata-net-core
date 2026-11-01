@@ -202,6 +202,19 @@ namespace ImportData
             listArrayParams.Add(arrayParams);
           }
         }
+        else if (result.Where(x => x.ErrorType == Constants.ErrorTypes.Debug).Any())
+        {
+          // TODO: Добавить локализацию строки.
+          var message = string.Join(Environment.NewLine, result.Where(x => x.ErrorType == Constants.ErrorTypes.Debug).Select(x => x.Message).ToArray());
+          text = null;
+          text = new string[] { "Загружен", DateTime.Now.ToString("d"), message };
+          for (int i = 1; i <= 3; i++)
+          {
+            var title = excelProcessor.GetExcelColumnName(paramCount + i);
+            var arrayParams = new ArrayList { text[i - 1], title, row };
+            listArrayParams.Add(arrayParams);
+          }
+        }
         else
         {
           // TODO: Добавить локализацию строки.

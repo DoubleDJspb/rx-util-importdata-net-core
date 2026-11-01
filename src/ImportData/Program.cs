@@ -90,6 +90,12 @@ namespace ImportData
         case "importcompanydirectives":
           EntityProcessor.Process(typeof(CompanyDirective), xlsxPath, Constants.SheetNames.CompanyDirectives, extraParameters, ignoreDuplicates, isBatch, logger);
           break;
+        case "importmemos":
+          EntityProcessor.Process(typeof(Memo), xlsxPath, Constants.SheetNames.Memos, extraParameters, ignoreDuplicates, isBatch, logger);
+          break;
+        case "importmemosaddressees":
+          EntityProcessor.Process(typeof(MemoAddressees), xlsxPath, Constants.SheetNames.MemosAddressees, extraParameters, ignoreDuplicates, isBatch, logger);
+          break;
         case "importcasefiles":
           EntityProcessor.Process(typeof(CaseFile), xlsxPath, Constants.SheetNames.CaseFiles, extraParameters, ignoreDuplicates, isBatch, logger);
           break;

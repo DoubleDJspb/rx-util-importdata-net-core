@@ -162,6 +162,8 @@ namespace ImportData
         return exceptionList;
       }
 
+      // Запись отладочной информации (ИД созданных объектов).
+      exceptionList.Add(new Structures.ExceptionsStruct { ErrorType = Constants.ErrorTypes.Debug, Message = entity.Id.ToString() });
       return exceptionList;
     }
 

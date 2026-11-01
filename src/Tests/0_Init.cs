@@ -25,6 +25,7 @@ namespace Tests
       ChangeRegNumber(TestSettings.OutgoingLettersPathXlsx, Constants.SheetNames.OutgoingLetters, 1);
       ChangeRegNumber(TestSettings.OrdersPathXlsx, Constants.SheetNames.Orders, 1);
       ChangeRegNumber(TestSettings.CompanyDirectivesPathXlsx, Constants.SheetNames.CompanyDirectives, 1);
+      ChangeRegNumber(TestSettings.MemosPathXlsx, Constants.SheetNames.Memos, 1);
     }
 
     internal static List<ArrayList> ChangeRegNumber(string xlsxPath, string sheetName, int columnNumber, List<ArrayList>? newNumbers = null)

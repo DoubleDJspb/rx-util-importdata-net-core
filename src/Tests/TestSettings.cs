@@ -29,6 +29,8 @@ namespace Tests
         public const string OutgoingLettersAddresseesPathXlsx = $@"{XlsxFolderPath}\OutgoingLettersAddressees.xlsx";
         public const string OrdersPathXlsx = $@"{XlsxFolderPath}\Orders.xlsx";
         public const string CompanyDirectivesPathXlsx = $@"{XlsxFolderPath}\CompanyDirectives.xlsx";
+        public const string MemosPathXlsx = $@"{XlsxFolderPath}\Memos.xlsx";
+        public const string MemosAddresseesPathXlsx = $@"{XlsxFolderPath}\MemosAddressees.xlsx";
         public const string SimpleDocumentPathXlsx = $@"{XlsxFolderPath}\SimpleDocument.xlsx";
 
     }
